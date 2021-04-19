@@ -155,42 +155,92 @@
 </head>
 
 <body>
+<div id="fullwrap">
 	<jsp:include page="WEB-INF/views/include/header.jsp"></jsp:include>
 
     <!-- Hero Section Begin 이미지 슬라이더 영역-->
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
-                </div>
+            <div >
+                <img srcset="img/slide/main_slide1.jpg 320w,
+		             img/slide/main_slide1.jpg 480w,
+		             img/slide/main_slide1.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide1.jpg" alt="요정 옷을 입은 엘바">
             </div>
-            <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
-                    </div>
-                </div>
+            <div >
+                <img srcset="img/slide/main_slide2.jpg 320w,
+		             img/slide/main_slide2.jpg 480w,
+		             img/slide/main_slide2.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide2.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide3.jpg 320w,
+		             img/slide/main_slide3.jpg 480w,
+		             img/slide/main_slide3.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide3.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide4.jpg 320w,
+		             img/slide/main_slide4.jpg 480w,
+		             img/slide/main_slide4.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide4.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide5.jpg 320w,
+		             img/slide/main_slide5.jpg 480w,
+		             img/slide/main_slide5.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide5.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide6.jpg 320w,
+		             img/slide/main_slide6.jpg 480w,
+		             img/slide/main_slide6.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide6.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide7.jpg 320w,
+		             img/slide/main_slide7.jpg 480w,
+		             img/slide/main_slide7.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide7.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide8.jpg 320w,
+		             img/slide/main_slide8.jpg 480w,
+		             img/slide/main_slide8.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide8.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img srcset="img/slide/main_slide9.jpg 320w,
+		             img/slide/main_slide9.jpg 480w,
+		             img/slide/main_slide9.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide9.jpg" alt="요정 옷을 입은 엘바">
             </div>
         </div>
     </section>
@@ -657,114 +707,15 @@
     </section>
     <!-- Latest Blog Section End -->
 
-    <!-- Partner Logo Section Begin -->
-    <div class="partner-logo">
-        <div class="container">
-            <div class="logo-carousel owl-carousel">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-1.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-2.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-3.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-4.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Partner Logo Section End -->
+   
+   
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-left">
-                        <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
-                        </ul>
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1">
-                    <div class="footer-widget">
-                        <h5>Information</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>My Account</h5>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-reserved">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <jsp:include page="WEB-INF/views/include/footer.jsp"></jsp:include>
+    
     <!-- Footer Section End -->
+    <!-- fullwrap end -->
+    </div>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

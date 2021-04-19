@@ -267,6 +267,10 @@ ol {
 		border-left-color: transparent;
 	}
 }
+#fullwrap{
+	width:80%;
+	margin:0 auto;
+}
 
 /*---------------------
   Header
@@ -866,23 +870,6 @@ header{
 	opacity: 0;
 }
 
-.hero-items .off-card {
-	height: 154px;
-	width: 154px;
-	padding-top: 40px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 140px;
-	position: absolute;
-	left: 47%;
-	top: 160px;
-	background: #e7ab3c;
-	z-index: 1;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-	opacity: 0;
-}
 
 .hero-items .off-card:after {
 	position: absolute;
@@ -1510,7 +1497,6 @@ header{
 -----------------------*/
 
 .footer-section {
-	background: #191919;
 	padding-top: 75px;
 }
 
@@ -3908,6 +3894,12 @@ header{
 	}
 	.nav-item .nav-menu li a {
 		padding: 16px 45px 15px;
+	}
+}
+
+/*@media only screen and (max-width: 1100px) {
+	.nav-right {
+		display: none;
 	}
 }
 
