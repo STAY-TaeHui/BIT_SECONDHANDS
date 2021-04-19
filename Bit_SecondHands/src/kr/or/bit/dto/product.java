@@ -1,6 +1,6 @@
 package kr.or.bit.dto;
 
-<<<<<<< HEAD
+
 import java.util.Date;
 
 public class product {
@@ -131,9 +131,7 @@ public class product {
 	
 	
 	
-	
-=======
-public class product {
+/*
 	private String name;
 	private int age;
 	private String addr;
@@ -146,6 +144,7 @@ public class product {
 		this.age = age;
 		this.addr = addr;
 	}
+	
 	public String getImage() {
 		return image;
 	}
@@ -170,6 +169,6 @@ public class product {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
->>>>>>> 8d4c92f281ca49a45fdf68a996175ec0665f5d43
-	
+
+	*/
 }

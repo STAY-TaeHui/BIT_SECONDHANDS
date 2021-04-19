@@ -134,8 +134,7 @@
             });
             */
 
-
-        		console.log("함수실행");
+        	console.log("함수실행");
         		
         		//상품 이미지 리스트 불러오기
         	$.ajax(
@@ -225,12 +224,14 @@
         				}
         			}
         			
-        		);
-        	
+        		);        	
         	
         }
-
         
+        
+		//자동 슬라이더 함수
+        
+		//}    
 
     </script>
 </head>
@@ -246,92 +247,22 @@
 	
 	<section class="hero-section">
         <div class="hero-items owl-carousel">
-
-            <div class="single-hero-items set-bg" data-setbg="img/slide/main_slide1.jpg">
-               
-
-            <div >
-                <img src="img/slide/main_slide1.jpg 320w,
-		             img/slide/main_slide1.jpg 480w,
-		             img/slide/main_slide1.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide1.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide2.jpg 320w,
-		             img/slide/main_slide2.jpg 480w,
-		             img/slide/main_slide2.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide2.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide3.jpg 320w,
-		             img/slide/main_slide3.jpg 480w,
-		             img/slide/main_slide3.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide3.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide4.jpg 320w,
-		             img/slide/main_slide4.jpg 480w,
-		             img/slide/main_slide4.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide4.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide5.jpg 320w,
-		             img/slide/main_slide5.jpg 480w,
-		             img/slide/main_slide5.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide5.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide6.jpg 320w,
-		             img/slide/main_slide6.jpg 480w,
-		             img/slide/main_slide6.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide6.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide7.jpg 320w,
-		             img/slide/main_slide7.jpg 480w,
-		             img/slide/main_slide7.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide7.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide8.jpg 320w,
-		             img/slide/main_slide8.jpg 480w,
-		             img/slide/main_slide8.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide8.jpg" alt="요정 옷을 입은 엘바">
-            </div>
-            <div >
-                <img src="img/slide/main_slide9.jpg 320w,
-		             img/slide/main_slide9.jpg 480w,
-		             img/slide/main_slide9.jpg 800w"
-		     		 sizes="(max-width: 320px) 280px,
-		             (max-width: 480px) 440px,
-		             800px"
-		     		 src="img/slide/main_slide9.jpg" alt="요정 옷을 입은 엘바">
-            </div>
+        <div id="slide">
+        <ul>
+        	<li id="img1"><img src="img/slide/main_slide1.jpg"/></li>
+        	<!--  
+        	<li id="img2"><img src="img/slide/main_slide2.jpg"/></li>
+        	<li id="img3"><img src="img/slide/main_slide3.jpg"/></li>
+        	<li id="img4"><img src="img/slide/main_slide4.jpg"/></li>
+        	<li id="img5"><img src="img/slide/main_slide5.jpg"/></li>
+        	<li id="img6"><img src="img/slide/main_slide6.jpg"/></li>
+        	<li id="img7"><img src="img/slide/main_slide7.jpg"/></li>
+        	<li id="img8"><img src="img/slide/main_slide8.jpg"/></li>
+        	<li id="img9"><img src="img/slide/main_slide9.jpg"/></li>
+        	-->
+        </ul>
         </div>
+
         </div>
     </section>
     <!-- Hero Section End -->

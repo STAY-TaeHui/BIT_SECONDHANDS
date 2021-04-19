@@ -2,10 +2,6 @@ package kr.or.bit.controller;
 
 import java.io.IOException;
 
-<<<<<<< HEAD
-import javax.naming.NamingException;
-=======
->>>>>>> 8d4c92f281ca49a45fdf68a996175ec0665f5d43
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
-<<<<<<< HEAD
+
 import kr.or.bit.dao.SecondHandsDAO;
-=======
+
 import kr.or.bit.ajax.ReplyDeleteOk;
 import kr.or.bit.ajax.ReplyListService;
 import kr.or.bit.ajax.ReplyWriteService;
@@ -30,7 +26,7 @@ import kr.or.bit.service.BoardEditService;
 import kr.or.bit.service.BoardListService;
 import kr.or.bit.service.BoardRewriteOk;
 import kr.or.bit.service.BoardRewriteService;
->>>>>>> 8d4c92f281ca49a45fdf68a996175ec0665f5d43
+
 
 @WebServlet("*.do")
 public class FrontBoardController extends HttpServlet {
@@ -41,11 +37,9 @@ public class FrontBoardController extends HttpServlet {
 
     }
 
-<<<<<<< HEAD
+
     protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-=======
-    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
->>>>>>> 8d4c92f281ca49a45fdf68a996175ec0665f5d43
+
     	String requestURI = request.getRequestURI();
     	String contextPath = request.getContextPath();
     	String url_Command = requestURI.substring(contextPath.length());
@@ -53,7 +47,7 @@ public class FrontBoardController extends HttpServlet {
     	Action action=null;
     	ActionForward forward=null;
     	
-<<<<<<< HEAD
+
     	if(url_Command.equals("/member.do")) { //글쓰기 처리
     		//UI+로직
     		SecondHandsDAO dao = null;
@@ -74,7 +68,7 @@ public class FrontBoardController extends HttpServlet {
 //    			dis.forward(request, response);
 //    		}
 //    	}
-=======
+
     	if(url_Command.equals("/BoardList.do")) { //글쓰기 처리
     		//UI+로직
     		action = new BoardListService();
@@ -158,7 +152,7 @@ public class FrontBoardController extends HttpServlet {
     			dis.forward(request, response);
     		}
     	}
->>>>>>> 8d4c92f281ca49a45fdf68a996175ec0665f5d43
+
     	
     	
     }

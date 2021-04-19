@@ -61,10 +61,12 @@
         <div class="container">
 
             <div class="inner-header">
+            <div id="rightmenu">
             <ul id="loginmenu">
             	<li>로그인</li>
             	<li>회원가입</li>
             </ul>
+            </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
