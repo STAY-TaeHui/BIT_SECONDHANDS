@@ -118,7 +118,7 @@
                             <li><a href="#">Underwear</a></li>
                             <li><a href="#">Kid's Clothing</a></li>
                             <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
                             <li><a href="#">Luxury Brands</a></li>
                             <li><a href="#">Brand Outdoor Apparel</a></li>
                         </ul>

@@ -237,6 +237,7 @@
 
 <body>
 
+
 <div id="fullwrap">
 	<jsp:include page="WEB-INF/views/include/header.jsp"></jsp:include>
 	
@@ -245,9 +246,105 @@
 	
 	<section class="hero-section">
         <div class="hero-items owl-carousel">
+
             <div class="single-hero-items set-bg" data-setbg="img/slide/main_slide1.jpg">
                
+
+            <div >
+                <img src="img/slide/main_slide1.jpg 320w,
+		             img/slide/main_slide1.jpg 480w,
+		             img/slide/main_slide1.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide1.jpg" alt="요정 옷을 입은 엘바">
             </div>
+            <div >
+                <img src="img/slide/main_slide2.jpg 320w,
+		             img/slide/main_slide2.jpg 480w,
+		             img/slide/main_slide2.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide2.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide3.jpg 320w,
+		             img/slide/main_slide3.jpg 480w,
+		             img/slide/main_slide3.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide3.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide4.jpg 320w,
+		             img/slide/main_slide4.jpg 480w,
+		             img/slide/main_slide4.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide4.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide5.jpg 320w,
+		             img/slide/main_slide5.jpg 480w,
+		             img/slide/main_slide5.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide5.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide6.jpg 320w,
+		             img/slide/main_slide6.jpg 480w,
+		             img/slide/main_slide6.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide6.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide7.jpg 320w,
+		             img/slide/main_slide7.jpg 480w,
+		             img/slide/main_slide7.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide7.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide8.jpg 320w,
+		             img/slide/main_slide8.jpg 480w,
+		             img/slide/main_slide8.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide8.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+            <div >
+                <img src="img/slide/main_slide9.jpg 320w,
+		             img/slide/main_slide9.jpg 480w,
+		             img/slide/main_slide9.jpg 800w"
+		     		 sizes="(max-width: 320px) 280px,
+		             (max-width: 480px) 440px,
+		             800px"
+		     		 src="img/slide/main_slide9.jpg" alt="요정 옷을 입은 엘바">
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <div id="content">
+	<p>오늘의 추천</p>
+	<ul class="productlist">
+	</ul>
+
+    <!-- Latest Blog Section End -->
+	
+	</div>
+	<section>
+   
             <div class="single-hero-items set-bg" data-setbg="img/slide/main_slide2.jpg">
                
             </div>
@@ -272,28 +369,18 @@
             <div class="single-hero-items set-bg" data-setbg="img/slide/main_slide9.jpg">
                
             </div>
-        </div>
+
     </section>
 	
-	<div id="content">
-	<p>오늘의 추천</p>
-	<ul class="productlist">
-	</ul>
-
 	
-	</div>
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <h3>copyright ⓒ</h3>3
-        </div>
-    </footer>
+
     <!-- bodywrap end -->
     </div>
-    
+     <jsp:include page="WEB-INF/views/include/footer.jsp"></jsp:include>
+     
+     </div>
     <!-- fullwrap end -->
-    </div>
-    <!-- Footer Section End -->
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
