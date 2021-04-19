@@ -39,8 +39,12 @@ body {
 	font-smoothing: antialiased;
 	margin:0;
 }
-body{
+
+#bodywrap{
 	padding-top:180px;
+}
+ul{
+	list-style:none;
 }
 
 h1,
@@ -159,7 +163,9 @@ ol {
 
 .set-bg {
 	background-repeat: no-repeat;
-	background-size: cover;
+
+	background-size: 1900px;
+
 	background-position: top center;
 }
 
@@ -266,6 +272,11 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+}
+
+#fullwrap{
+	width:80%;
+	margin:0 auto;
 }
 
 /*---------------------
@@ -969,6 +980,17 @@ header{
 .hero-items .owl-nav button[type=button].owl-next {
 	left: auto;
 	right: 40px;
+}
+/*-------------------
+이미지 슬라이드
+---------------------*/
+#main_slide{
+	width:100%;
+	
+}
+
+#main_slide ul{
+	display:flex;
 }
 
 /*---------------------
