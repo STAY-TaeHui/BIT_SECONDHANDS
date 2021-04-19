@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<<<<<<< HEAD
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -10,22 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-
-    <!--j쿼리 cdn-->
-    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!--검색어 자동완성 j쿼리-->
     <!-- CSS , JS -->
@@ -147,8 +133,75 @@
                 }
             });
             */
+
+
+        		console.log("함수실행");
+        		
+        		//상품 이미지 리스트 불러오기
+        	$.ajax(
+        			
+        			{	
+        				//url:"ProductListOk.ajax",
+        				url:"maincontent.ajax",
+        				type:"get",
+        				dataType:"json",
+        				success:function(responsedata){
+        					console.log(responsedata);
+        					
+        					
+        						$.each(responsedata, function(index, obj){
+        							
+        							$(".productlist").append("<li><div class='thumnail'>"+obj.img+
+        									"</div><div class=title>"+obj.title+"</div><div class='imginfo'><p calss='price'>"+obj.price+"</p>"+
+        									"<p class='price'>"+obj.wrtime+"</p></div></li>");
+        						});
+        						
+        					
+        				},
+        				error:function(xhr){
+        					console.log(xhr);
+        				}
+        			}
+        			
+        		);
+        	
             
         });
+        
+        //검색하기 함수
+        function search(){
+        	
+        	console.log("검색");
+        	
+			$.ajax(
+        			
+        			{	
+        				//url:"ProductListOk.ajax",
+        				url:"maincontent.ajax",
+        				type:"post",
+        				dataType:"json",
+        				success:function(responsedata){
+        					console.log(responsedata);
+        					
+        					
+        						$.each(responsedata, function(index, obj){
+        							
+        							$(".productlist").append("<li><div class='thumnail'>"+obj.img+
+        									"</div><div class=title>"+obj.title+"</div><div class='imginfo'><p calss='price'>"+obj.price+"</p>"+
+        									"<p class='price'>"+obj.wrtime+"</p></div></li>");
+        						});
+        						
+        					
+        				},
+        				error:function(xhr){
+        					console.log(xhr);
+        				}
+        			}
+        			
+        		);
+        	
+        	
+        }
 
         
 
@@ -193,29 +246,12 @@
             </div>
         </div>
     </section>
+	
 	<div id="content">
-	<input type="button" onclick="fnc()" value="누르시오">
-	<script>
-	function fnc(){
-		console.log("함수실행");
-	$.ajax(
-			
-			{
-				url:"maincontent.ajax",
-				type:"get",
-				dataType:"json",
-				success:function(responsedata){
-					console.log(responsedata);
-					
-				},
-				error:function(xhr){
-					console.log(xhr);
-				}
-			}
-			
-			);
-	}
-	</script>
+	<p>오늘의 추천</p>
+	<ul class="productlist">
+	</ul>
+
 	
 	</div>
     <!-- Footer Section Begin -->
@@ -244,15 +280,5 @@
     <script src="js/main.js"></script>
 </body>
 
-=======
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-HELLO
-<a href="member.do">member</a>
-</body>
->>>>>>> 8e6f78e365620625964a7e014e9cbcb9a7dfcda7
-</html>
+

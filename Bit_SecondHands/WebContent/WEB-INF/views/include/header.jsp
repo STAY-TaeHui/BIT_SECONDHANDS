@@ -1,5 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+        <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!--j쿼리 cdn-->
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Page Preloder -->
     <div id="preloder">
@@ -42,7 +59,12 @@
         </div>
          -->
         <div class="container">
+
             <div class="inner-header">
+            <ul id="loginmenu">
+            	<li>로그인</li>
+            	<li>회원가입</li>
+            </ul>
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
@@ -54,14 +76,11 @@
                     <div class="col-lg-7 col-md-7">
                        
                         <div class="advanced-search">
-                         <!--    헤더 검색창 안의 카테고리 선택 버튼
-                            <button type="button" class="category-btn">All Categories</button>
-                        -->
 
                         <form class="search">
                             <div class="input-group" id="header_search">
                                 <input type="text" id="header_search">
-                                <button type="submit" name="clickbtn"><i class="ti-search"></i></button>
+                                <button type="submit" name="clickbtn" onclick="search()"><i class="ti-search"></i></button>
                             </div>
                         </form>
 
@@ -86,7 +105,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
         <div class="nav-item">
             <div class="container">
                 <div class="nav-depart">
@@ -135,5 +154,6 @@
                 <div id="mobile-menu-wrap"></div>
             </div>
         </div>
+       </div>
     </header>
     <!-- Header End -->

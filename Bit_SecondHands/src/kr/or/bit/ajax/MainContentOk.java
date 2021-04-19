@@ -32,12 +32,13 @@ public class MainContentOk extends HttpServlet {
 			
 			JSONArray jsonArr = new JSONArray();
 			
-				for(int i = 0 ; i < 4; i++) {
+				for(int i = 0 ; i < 8; i++) {
 					JSONObject jsonObj = new JSONObject();
 
 					jsonObj.put("img","이미지"+i);
 					jsonObj.put("title","제목"+i);
 					jsonObj.put("price","가격"+i);
+					jsonObj.put("wrtime","시간"+i);
 					
 					jsonArr.add(jsonObj);
 				}
