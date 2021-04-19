@@ -1,11 +1,16 @@
 package kr.or.bit.ajax;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
@@ -21,7 +26,11 @@ public class ProductListOk extends HttpServlet {
     }
 
     protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	System.out.println("This is ProductListOk.ajax");
+    	PrintWriter out = response.getWriter();
     	SecondHandsDAO dao = new SecondHandsDAO();
+    	JSONArray arr = dao.getProductList();
+    	response.getWriter().print(arr);
     	
 	}
     

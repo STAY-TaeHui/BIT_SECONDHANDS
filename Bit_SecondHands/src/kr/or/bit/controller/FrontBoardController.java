@@ -13,15 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
 import kr.or.bit.dao.SecondHandsDAO;
-import kr.or.bit.service.BoardAddService;
-import kr.or.bit.service.BoardContentService;
-import kr.or.bit.service.BoardDeleteOk;
-import kr.or.bit.service.BoardDeleteService;
-import kr.or.bit.service.BoardEditOk;
-import kr.or.bit.service.BoardEditService;
-import kr.or.bit.service.BoardListService;
-import kr.or.bit.service.BoardRewriteOk;
-import kr.or.bit.service.BoardRewriteService;
 
 @WebServlet("*.do")
 public class FrontBoardController extends HttpServlet {

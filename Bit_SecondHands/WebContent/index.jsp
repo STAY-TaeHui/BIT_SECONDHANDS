@@ -9,5 +9,7 @@
 <body>
 HELLO
 <a href="member.do">member</a>
+<a href="ProductListOk.ajax">product</a>
+<a href="EmailCheckOk.ajax">product</a>
 </body>
 </html>
