@@ -1,8 +1,6 @@
 package kr.or.bit.ajax;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,42 +8,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
-import kr.or.bit.action.Action;
-import kr.or.bit.action.ActionForward;
 import kr.or.bit.dao.SecondHandsDAO;
 
-@WebServlet("/ProductListOk.ajax")
-public class ProductListOk extends HttpServlet {
+/**
+ * Servlet implementation class ProductSearchOk
+ */
+@WebServlet("/SearchProductOk.ajax")
+public class SearchProductOk extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
-    public ProductListOk() {
+    public SearchProductOk() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("This is ProductListOk.ajax");
+
+    private void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    	System.out.println("This is SearchProductOk.ajax");
         //PrintWriter out = response.getWriter();
+    	String keyword = request.getParameter("keyword");
+    	
+    	System.out.println("서블릿의 k : " + keyword);
+    	
         SecondHandsDAO dao = new SecondHandsDAO();
-        
-        JSONArray arr = dao.getProductList();
+        JSONArray arr = dao.searchProduct(keyword);
         
         response.setContentType("application/x-json; charset=UTF-8");
         response.getWriter().print(arr);
-        
         System.out.println(arr);
         
     }
-    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doProcess(request, response);
+		
+		doProcess(request,response);
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doProcess(request, response);
+		// TODO Auto-generated method stub
+		doProcess(request,response);
 	}
 
 }

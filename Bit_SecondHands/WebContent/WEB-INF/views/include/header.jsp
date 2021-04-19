@@ -77,12 +77,12 @@
                        
                         <div class="advanced-search">
 
-                        <form class="search">
+                        <!--  <form class="search"> -->
                             <div class="input-group" id="header_search">
-                                <input type="text" id="header_search">
+                                <input type="text" id="keyword">
                                 <button type="submit" name="clickbtn" onclick="search()"><i class="ti-search"></i></button>
                             </div>
-                        </form>
+                        <!-- </form> -->
 
                         <!-- advanced-search end 헤더 검색창-->
                         </div>

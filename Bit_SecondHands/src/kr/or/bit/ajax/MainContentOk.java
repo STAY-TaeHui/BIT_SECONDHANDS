@@ -12,6 +12,9 @@ import net.sf.json.JSONObject;
 
 /**
  * Servlet implementation class MainContenAjax
+ * 
+ * 
+ * ProductListOk 적용하기 전 임시로 테스트해본 파일
  */
 @WebServlet("/maincontent.ajax")
 public class MainContentOk extends HttpServlet {

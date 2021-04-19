@@ -141,6 +141,27 @@
         	$.ajax(
         			
         			{	
+        				url:"ProductListOk.ajax",
+        				//url:"maincontent.ajax",
+        				type:"get",
+        				dataType:"json",
+        				success:function(responsedata){
+        					console.log(responsedata);
+        					
+        					
+        						$.each(responsedata, function(index, obj){
+          							
+        							$(".productlist").append("<li><div class='thumnail'>"+obj.pimg_name+
+        									"</div><div class=title>"+obj.p_subj+"</div><div class='imginfo'><p calss='price'>"+obj.p_price+"</p>"+
+        									"<p class='price'>"+index+"</p></div></li>");
+        						});
+        						
+        					
+        				},
+        			
+        			
+        			/*
+        			{	
         				//url:"ProductListOk.ajax",
         				url:"maincontent.ajax",
         				type:"get",
@@ -158,10 +179,13 @@
         						
         					
         				},
+        			}
+        				*/
         				error:function(xhr){
         					console.log(xhr);
         				}
         			}
+        			
         			
         		);
         	
@@ -176,20 +200,23 @@
 			$.ajax(
         			
         			{	
-        				//url:"ProductListOk.ajax",
-        				url:"maincontent.ajax",
+        				url:"SearchProductOk.ajax",
+        				//url:"maincontent.ajax",
         				type:"post",
         				dataType:"json",
+        				data: { keyword : $("#keyword").val()},
         				success:function(responsedata){
         					console.log(responsedata);
-        					
-        					
-        						$.each(responsedata, function(index, obj){
-        							
-        							$(".productlist").append("<li><div class='thumnail'>"+obj.img+
-        									"</div><div class=title>"+obj.title+"</div><div class='imginfo'><p calss='price'>"+obj.price+"</p>"+
-        									"<p class='price'>"+obj.wrtime+"</p></div></li>");
+        						$(".productlist").empty();
+        					       					
+								$.each(responsedata, function(index, obj){
+          							
+        							$(".productlist").append("<li><div class='thumnail'>"+obj.pimg_name+
+        									"</div><div class=title>"+obj.p_subj+"</div><div class='imginfo'><p calss='price'>"+obj.p_price+"</p>"+
+        									"<p class='price'>"+index+"</p></div></li>");
         						});
+								
+								$("#keyword").val("");
         						
         					
         				},
@@ -209,6 +236,7 @@
 </head>
 
 <body>
+
 <div id="fullwrap">
 	<jsp:include page="WEB-INF/views/include/header.jsp"></jsp:include>
 	
@@ -278,6 +306,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 <html>
