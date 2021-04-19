@@ -14,11 +14,11 @@ import net.sf.json.JSONObject;
  * Servlet implementation class MainContenAjax
  */
 @WebServlet("/maincontent.ajax")
-public class MainContentAjax extends HttpServlet {
+public class MainContentOk extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public MainContentAjax() {
+    public MainContentOk() {
         super();
         // TODO Auto-generated constructor stub
     }

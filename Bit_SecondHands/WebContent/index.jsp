@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -243,4 +244,15 @@
     <script src="js/main.js"></script>
 </body>
 
+=======
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+HELLO
+<a href="member.do">member</a>
+</body>
+>>>>>>> 8e6f78e365620625964a7e014e9cbcb9a7dfcda7
 </html>
