@@ -18,6 +18,9 @@ import org.json.simple.JSONObject;
 
 
 
+
+
+
 //CRUD 함수 > ConnectionPool > 함수단위 연결 ,받환 
 public class SecondHandsDAO {
 	DataSource ds = null;
@@ -72,11 +75,13 @@ public class SecondHandsDAO {
 	}
 	
 	//메인에 뿌려줄 상품 리스트 뽑기
-	 public JSONArray getProductList() { 
+	public JSONArray getProductList() { 
 	      Connection conn = null;
 	      PreparedStatement pstmt = null;
 	      ResultSet rs=null;
 	      JSONArray arr = new JSONArray();
+	      
+	      System.out.println("리스트 함수 실행");
 	      
 	      try {
 	         conn=ds.getConnection();
@@ -86,21 +91,19 @@ public class SecondHandsDAO {
 	               +"where pi.pimg_num=1";
 	         pstmt = conn.prepareStatement(sql);
 	         
-	         rs = pstmt.executeQuery();
-	         
+	         rs= pstmt.executeQuery();
+	         System.out.println(pstmt.executeQuery());
 	         while(rs.next()) {
-	        	 
 	            JSONObject obj = new JSONObject();
 	            obj.put("pimg_name",rs.getString("pimg_name"));
 	            obj.put("p_subj",rs.getString("p_subj"));
 	            obj.put("p_price",rs.getInt("p_price"));
-	            
-	            System.out.println("제이슨 객체 : "+obj);
-	            
+	            System.out.println(obj);
 	            arr.add(obj);
+	            
+	            System.out.println("배열 담겼나 : " +arr.get(0));
 	         } 
-	         System.out.println("배열 : " +arr);
-
+	         System.out.println(arr);
 	         
 	      
 	         
@@ -121,7 +124,6 @@ public class SecondHandsDAO {
 	      }
 	      return arr;
 	   }
-	
 	
 	//연결 테스트 함수
 	public void member() {
@@ -155,6 +157,7 @@ public class SecondHandsDAO {
 		
 	}
 	
+	//검색하는 함수 (가희)
 	public JSONArray searchProduct(String keyword){
 		System.out.println("k : " + keyword);
 		 Connection conn = null;
@@ -176,6 +179,117 @@ public class SecondHandsDAO {
 	         while(rs.next()) {
 	        	 
 	            JSONObject obj = new JSONObject();
+	            
+	            obj.put("pimg_name",rs.getString("pimg_name"));
+	            obj.put("p_subj",rs.getString("p_subj"));
+	            obj.put("p_price",rs.getInt("p_price"));
+	            
+	            System.out.println("제이슨 객체 : "+obj);
+	            
+	            arr.add(obj);
+	         } 
+	         System.out.println("배열 : " +arr);
+
+	         
+	      
+	         
+	      } catch (SQLException e) {
+	         // TODO: handle exception
+	         System.out.println(e.getMessage());
+	      }catch(Exception e3) {
+	         System.out.println(e3.getMessage());
+	      }
+	      finally {
+	         try {
+	            rs.close();
+	            pstmt.close();
+	            conn.close();//반환하기
+	         } catch (Exception e2) {
+	            System.out.println(e2.getMessage());
+	         }
+	      }
+	      return arr;
+	}
+	
+	//검색 후 최신순 정렬(가희)
+	public JSONArray ProductOderByTime(String keyword){
+		System.out.println("k : " + keyword);
+		 Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs=null;
+	      JSONArray arr = new JSONArray();
+	      
+	      
+	      try {
+	         conn=ds.getConnection();
+	         String sql = "select pi.pimg_name, p.p_subj,p.p_price "
+	               +"from product p left join product_img pi "
+	               +"on p.p_num=pi.p_num "
+	               +"where p.p_subj Like '%" + keyword + "%' or p.p_content Like '%"+ keyword + "%' "
+	               +"order by p.p_wr_time";
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	        	 
+	            JSONObject obj = new JSONObject();
+	            
+	            obj.put("pimg_name",rs.getString("pimg_name"));
+	            obj.put("p_subj",rs.getString("p_subj"));
+	            obj.put("p_price",rs.getInt("p_price"));
+	            
+	            System.out.println("제이슨 객체 : "+obj);
+	            
+	            arr.add(obj);
+	         } 
+	         System.out.println("배열 : " +arr);
+
+	         
+	      
+	         
+	      } catch (SQLException e) {
+	         // TODO: handle exception
+	         System.out.println(e.getMessage());
+	      }catch(Exception e3) {
+	         System.out.println(e3.getMessage());
+	      }
+	      finally {
+	         try {
+	            rs.close();
+	            pstmt.close();
+	            conn.close();//반환하기
+	         } catch (Exception e2) {
+	            System.out.println(e2.getMessage());
+	         }
+	      }
+	      return arr;
+	}
+	
+	//검색 후 가격순 정렬 가희
+	public JSONArray ProductOderByPrice(String keyword){
+		System.out.println("k : " + keyword);
+		 Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs=null;
+	      JSONArray arr = new JSONArray();
+	      
+	      
+	      try {
+	         conn=ds.getConnection();
+	         String sql = "select pi.pimg_name, p.p_subj,p.p_price "
+	               +"from product p left join product_img pi "
+	               +"on p.p_num=pi.p_num "
+	               +"where p.p_subj Like '%" + keyword + "%' or p.p_content Like '%"+ keyword + "%' "
+	               +"order by p.p_price";
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	        	 
+	            JSONObject obj = new JSONObject();
+	            
 	            obj.put("pimg_name",rs.getString("pimg_name"));
 	            obj.put("p_subj",rs.getString("p_subj"));
 	            obj.put("p_price",rs.getInt("p_price"));

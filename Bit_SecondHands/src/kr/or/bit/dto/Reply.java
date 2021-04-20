@@ -80,6 +80,7 @@ public class Reply {
 		this.idx_fk = idx_fk;
 	}
 
+	@Override
 	public String toString() {
 		return "reply [no=" + no + ", writer=" + writer + ", userid=" + userid + ", pwd=" + pwd + ", content=" + content
 				+ ", writedate=" + writedate + ", idx_fk=" + idx_fk + "]";

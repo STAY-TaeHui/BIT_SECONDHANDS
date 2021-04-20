@@ -16,6 +16,7 @@ public class product {
 	private Date p_ed_time;
 	private String p_status;
 	
+	@Override
 	public String toString() {
 		return "product [p_num=" + p_num + ", b_num=" + b_num + ", storename=" + storename + ", p_addr=" + p_addr
 				+ ", p_subj=" + p_subj + ", p_dcharge=" + p_dcharge + ", p_price=" + p_price + ", p_content="

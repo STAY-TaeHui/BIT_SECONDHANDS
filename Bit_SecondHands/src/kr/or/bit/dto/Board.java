@@ -156,6 +156,7 @@ public class Board {  //SELECT * FROM jspboard
 	}
 
 	//필요에 따라서 구현
+	@Override
 	public String toString() {
 		return "board [idx=" + idx + ", writer=" + writer + ", pwd=" + pwd + ", subject=" + subject + ", content="
 				+ content + ", writedate=" + writedate + ", readnum=" + readnum + ", filename=" + filename

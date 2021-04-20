@@ -64,7 +64,7 @@
             <div id="rightmenu">
             <ul id="loginmenu">
             	<li>로그인</li>
-            	<li>회원가입</li>
+            	<li><a href="resister.do">회원가입</a></li>
             </ul>
             </div>
                 <div class="row">

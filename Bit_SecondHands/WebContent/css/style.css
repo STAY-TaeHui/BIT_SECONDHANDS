@@ -1039,6 +1039,41 @@ header {
 /*-----------------------
 게시글 영역
 -----------------------*/
+
+ .clickedbtn{
+	background-color:#f70000;
+	color:white;
+	border: 1px lightgray solid;
+}
+
+#ordermenu{
+	display:flex;
+	margin-top:10px;	
+}
+
+#ordermenu ul{
+	display:flex;
+	margin-left:auto;
+}
+
+#ordermenu ul li{
+	margin-left:10px;
+	
+}
+
+.unclickedbtn{
+	border: 1px lightgray solid;
+	background-color:white;
+	color:#f70000;
+}
+
+
+#ordermenu ul li input:hover{
+	border: 1px lightgray solid;
+	background-color:#f70000;
+	color:white;
+}
+
 .productlist {
 	width: 100%;
 	display: flex;
@@ -1048,10 +1083,16 @@ header {
 .productlist li {
 	width: 20%;
 	border: 1px red solid;
+	padding:7px;
+	
 }
 
 .imginfo {
 	display: flex;
+}
+
+.wrtime{
+	margin-left:auto;
 }
 
 /*---------------------
