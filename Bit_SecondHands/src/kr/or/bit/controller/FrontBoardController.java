@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
 import kr.or.bit.dao.SecondHandsDAO;
+import kr.or.bit.service.LoginOkAction;
 
 @WebServlet("*.do")
 public class FrontBoardController extends HttpServlet {
@@ -31,13 +32,17 @@ public class FrontBoardController extends HttpServlet {
     	Action action=null;
     	ActionForward forward=null;
     	
-    	if(url_Command.equals("/member.do")) { //글쓰기 처리
+    	if(url_Command.equals("/member.do")) { //DB연결 테스트
     		//UI+로직
     		SecondHandsDAO dao = null;
 			dao = new SecondHandsDAO();
 			System.out.println("DAO 진입");
     		dao.member();
     		
+    	}
+    	else if(url_Command.equals("/LoginOk.do")) {
+    		action = new LoginOkAction();
+    		forward = action.execute(request, response);
     	}
     	
 //    	if(forward != null) {

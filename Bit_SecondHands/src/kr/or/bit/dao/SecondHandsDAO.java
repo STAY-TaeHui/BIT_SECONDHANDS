@@ -34,7 +34,12 @@ public class SecondHandsDAO {
 		
 	}
 	
-	//
+	//로그인 구현
+	public boolean getLoginOk(String email, String password) {
+		 
+	}
+	
+	//이메일 중복체크
 	public boolean getEmailCheck(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
