@@ -670,6 +670,7 @@ header{
 }
 
 .nav-item {
+	
 	background: white;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -728,6 +729,7 @@ header{
 
 .nav-item .nav-depart .depart-btn .depart-hover li {
 	list-style: none;
+	
 }
 
 .nav-item .nav-depart .depart-btn .depart-hover li.active a {
