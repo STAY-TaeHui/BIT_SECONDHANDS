@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\cooki\Desktop\BIT_SECONDHANDS\.metadata\.plugins\org.eclipse.jdt.core
+1677906785.index

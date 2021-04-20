@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+int random = (int) (Math.random() * (999999 - 100000 + 1)) + 100000;
+System.out.println(random);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +23,6 @@
 	href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <link href="css/indexCSS.css">
-<script type="text/javascript" src="js/Registerjs.js"></script>
 
 <!-- jQuery -->
 <!-- iamport.payment.js -->
@@ -32,10 +35,10 @@
 		<div>
 			<article class="card-body mx-auto" style="max-width: 400px;">
 				<p class="divider-text" style="text-align: center;">
-					<img src="images/logo.gif">
+					<img src="images/logo.png" width="300px" height="80px">
 				</p>
 				<br>
-				<form id="form">
+				<form id="form" action="">
 					<div>
 						<h5>ID</h5>
 						<div class="input-group-prepend" id="shopname">
@@ -112,7 +115,22 @@
 						<div id="shopname">
 							<input id="phone" class="form-control"
 								placeholder="11자리 숫자로 입력하세요" type="text">
-							<button type="button" id="phoneCheckBtn">전번인증</button>
+							<button type="button" id="phoneCheckBtn">인증요청</button>
+						</div>
+					</div>
+					<div style="margin: 10px"></div>
+					<div id="hiddenCertification" style="display: none; width: 65%">
+						<div>
+							<h6>핸드폰 인증</h6>
+						</div>
+						<div id="shopname">
+							<input id="phoneC" class="form-control" placeholder="인증번호 6자리 입력"
+								type="text">
+							<button type="button" id="randomCheckBtn"
+								style="margin-right: 10px;">인증</button>
+							<input id="random" type="hidden" value="<%=random%>"
+								name="random">
+							<div id="timer" style="width: 50px;"></div>
 						</div>
 					</div>
 					<br>
@@ -132,97 +150,107 @@
 	</div>
 	<!--container end.//-->
 </body>
-<script type="text/javascript">
-	//이메일 입력방식 선택
-	$('#selectEmail').change(function() {
-		$("#selectEmail option:selected").each(function() {
-			if ($(this).val() == '1') { //직접입력일 경우
-				$("#emailType").val(''); //값 초기화
-				$("#emailType").attr("disabled", false); //활성화
-			} else { //직접입력이 아닐경우
-				$("#emailType").val($(this).text()); //선택값 입력
-				$("#emailType").attr("disabled", true); //비활성화
-			}
-		});
-	});
+<script type="text/javascript" src="js/Registerjs.js"></script>
 
-	//이메일 중복체크
-	$('#emailCheckBtn').click(function() {
-		let email = $('#email').val();
-		let emailType = $('#emailType').val();
-		console.log(email + "@" + emailType);
-		if (email == '') {
+<script type="text/javascript">
+	//핸드폰 인증
+	function phoneRequest() {
+
+		//전화번호 체크
+		phone = $('#phone').val();
+		let phoneC = phone.substring(0, 3) + '-' + phone.substring(3, 7) + '-'
+				+ phone.substring(7, 11);
+		let regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+		if (regExp.test(phoneC)) {
+
+		} else {
+			console.log(phoneC);
 			swal({
-				title : "이메일을 입력해주세요",
+				title : "핸드폰번호가 올바르지 않습니다(ex. 010-0000-0000)",
+				icon : "error"
+			});
+			checking = false;
+			return;
+		}
+
+		if ($('#phone').val() == '') {
+			swal({
+				title : "핸드폰 번호를 입력해주세요",
 				icon : "error"
 			});
 			return;
 		}
+		//핸드폰 인증 타이머
+
+		$('#hiddenCertification').attr('style', 'display:block');
+		document.getElementById("timer").innerHTML = '';
+		var time = 300;
+		var min = "";
+		var sec = "";
+		x = setInterval(function() {
+			min = parseInt(time / 60);
+			sec = time % 60;
+			document.getElementById("timer").innerHTML = min + ":" + sec;
+			time--;
+
+			if (time < 0) {
+				swal({
+					title : "인증요청을 다시 해주세요",
+					icon : "error"
+				});
+				clearInterval(x);
+			}
+		}, 1000);
+
+		//휴대폰 인증 메시지 전송
 		$.ajax({
-			url : "EmailCheckOk.ajax",
+			url : "PhoneCheckOk.ajax",
 			data : {
-				email : email + "@" + emailType
+				random : <%= random %>,
+				phoneNm : phone
 			},
 			type : "get",
 			dataType : "html",
-			success : function(data) {
-				console.log(data);
-				if (data == 'true') {
-					swal({
-						title : "사용가능한 이메일입니다",
-						icon : "success"
-					});
-				} else {
-					swal({
-						title : "이미 존재하는 이메일입니다",
-						icon : "error"
-					});
-				}
+			success : function() {
+				swal({
+					title : "해당 번호로 인증번호 6자리를 보냈습니다. \n3분 이내에 입력해주세요.",
+					icon : "success"
+				});
 			},
 			error : function(error) {
 				console.log(error);
 			}
 		});
-	});
+	};
+	$('#phoneCheckBtn').on("click", phoneRequest);
 	
-	//닉네임 / 상점이름 중복체크
-	$('#nameCheckBtn').click(function() {
-		let shopname = $('#shopName').val();
-		console.log(shopname);
-		
-		if (shopname == '') {
+	//휴대폰 인증번호 인증
+	$("#randomCheckBtn").click(function() {
+		if ($('#phone').val() == '') {
 			swal({
-				title : "닉네임 / 상점이름을 입력해주세요",
+				title : "인증번호를 입력해주세요",
 				icon : "error"
 			});
 			return;
 		}
-		
-		$.ajax({
-			url : "NameCheckOk.ajax",
-			data : {
-				storename : shopname
-			},
-			type : "get",
-			dataType : "html",
-			success : function(data) {
-				console.log(data);
-				if (data=='true') {
-					swal({
-						title : "사용가능한 상점이름 입니다",
-						icon : "success"
-					});
-				} else {
-					swal({
-						title : "이미 존재하는 상점이름 입니다",
-						icon : "error"
-					});
-				}
-			},
-			error : function(error) {
-				console.log(error);
-			}
-		});
+
+		let check = $("#phoneC").val();
+		if (check == <%=random%>) {
+			swal({
+				title : "인증완료",
+				icon : "success"
+			});
+			$('#hiddenCertification').attr('style', 'display:none');
+			$('#phoneCheckBtn').html('인증완료');
+			$('#phoneCheckBtn').attr('disabled', 'true');
+		} else {
+			swal({
+				title : "인증실패",
+				icon : "error"
+			});
+			$("#phoneC").val("");
+		}
 	});
 </script>
+
 </html>

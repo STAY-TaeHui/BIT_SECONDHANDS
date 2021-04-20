@@ -1912,7 +1912,14 @@ pre code {
 	top: 0;
 	right: 0;
 }
-
+#hiddenCertification {
+	display: flex;
+}
+#shopname button {
+	position: relative;
+	top: 0;
+	right: 0;
+}
 .form-control {
 	display: block;
 	width: 100%;
@@ -8647,6 +8654,15 @@ input {
 }
 
 #CheckBtn {
+	width: 80px;
+	font-size: 12px;
+	color: white;
+	border: none;
+	background-color: #f70000;
+	border-radius: 5px;
+}
+
+#randomCheckBtn{
 	width: 80px;
 	font-size: 12px;
 	color: white;
