@@ -32,12 +32,12 @@ public class MyShopController extends HttpServlet {
 		String requestURI = request.getRequestURI();
     	String contextPath = request.getContextPath();
     	String url_Command = requestURI.substring(contextPath.length());
-    	
+    	System.out.println("url_Command : "+url_Command);
     	Action action=null;
     	ActionForward forward=null;
     	HttpSession session = request.getSession();
     	
-    	String logincheck=(String) session.getAttribute("member_ID");
+    	String logincheck=(String) session.getAttribute("email");
     	
     	if(logincheck==null) {
     		System.out.println("SESSOION IS NULL");
@@ -47,13 +47,24 @@ public class MyShopController extends HttpServlet {
     		forward.setPath("/WEB-INF/views/member/Login.jsp");
     		
     	}
-    	//myshop 메인
-    	else if(url_Command.equals("/myshop")) {
-    		System.out.println("myshop.jsp forward");
-    		forward = new ActionForward();
-    		forward.setRedirect(false);
-    		forward.setPath("/WEB-INF/views/myshop/myshop.jsp");
+    	else {
+    		//myshop 메인
+    		 if(url_Command.equals("/myshop")) {
+    	    		System.out.println("myshop.jsp forward");
+    	    		forward = new ActionForward();
+    	    		forward.setRedirect(false);
+    	    		forward.setPath("/WEB-INF/views/myshop/myshop.jsp");
+    	    	}
+    	    	else if(url_Command.equals("/myshop/productinfo")) {
+    	    		System.out.println("/myshop/productinfo 입니당");
+    	    		forward = new ActionForward();
+    	    		forward.setRedirect(false);
+    	    		forward.setPath("/productinfo.ajax");
+    	    	}
+    	    	
     	}
+    	
+    
     	
     	
     	//////////////////////////////////////////////////////

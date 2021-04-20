@@ -385,6 +385,50 @@ public class SecondHandsDAO {
 	      }
 	      return arr;
 	}
+	public JSONObject ProductInfo(String email) {
+		System.out.println( "ProductInfO함수이지롱");
+		 Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs=null;
+	      JSONObject obj = new JSONObject();
+	      try {
+	    	  System.out.println("TRY and CHATCH");
+	    	  System.out.println("email : " + email);
+	    	  	conn=ds.getConnection();
+	    	  	//상점이름, 프로필사진파일 이름 얻기
+		         String sql = "select storename, m_profile "
+		         		+"from member "
+		         		+"where m_email=?";
+		         pstmt = conn.prepareStatement(sql);
+		         pstmt.setString(1, email);
+		           
+		         rs = pstmt.executeQuery();
+		         
+		         if(rs.next()) {
+		           	 obj.put("storename", rs.getString("storename"));
+			         obj.put("m_profile", rs.getString("m_profile"));
+		         }
+		        
+		         //상품 전체개수 얻기
+		         sql="select count(*)as cnt "
+		         		+ "from product "
+		         		+ "group by storename having storename=?";
+		         pstmt = conn.prepareStatement(sql);
+		         pstmt.setString(1, (String)obj.get("storename"));
+		         
+		         rs=pstmt.executeQuery();
+		         
+		         if(rs.next()) {
+		        	 obj.put("p_count", rs.getString("cnt"));
+		         }
+
+		         System.out.println(obj.toString());
+		         
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
 
 
 

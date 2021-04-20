@@ -39,7 +39,7 @@ public class LoginOkAction implements Action {
 		else {
 			System.out.println("로그인성공");
 			HttpSession session = request.getSession(true);
-			session.setAttribute("member_ID", email);
+			session.setAttribute("email", email);
 			
 			msg="로그인 성공!!";
 			url="index.do";
