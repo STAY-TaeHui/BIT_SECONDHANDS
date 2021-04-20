@@ -63,7 +63,7 @@
             <div class="inner-header">
             <div id="rightmenu">
             <ul id="loginmenu">
-            	<li>로그인</li>
+            	<li><a href="login.do">로그인</a></li>
             	<li><a href="resister.do">회원가입</a></li>
             </ul>
             </div>
